@@ -50,10 +50,10 @@ export function createCharacterCard(character) {
     const cardInfoTitleOccurrences = document.createElement("dt");
     cardInfoTitleOccurrences.classList.add("card__info-title");
     cardInfoTitleOccurrences.textContent = "Occurrences";
-    cardInfoTitleOccurrences.textContent = character.episode.count
   
     const cardInfoDescriptionOccurrences = document.createElement("dd");
     cardInfoDescriptionOccurrences.classList.add("card__info-description");
+    cardInfoDescriptionOccurrences.textContent = character.episode.count
   
     cardInfo.appendChild(cardInfoTitleStatus);
     cardInfo.appendChild(cardInfoDescriptionStatus);
