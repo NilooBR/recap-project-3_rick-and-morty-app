@@ -23,7 +23,7 @@ async function fetchCharacterData() {
   const data = await response.json();
   console.log(data);
   data.results.forEach(character => {
-    const card = new createCharacterCard(character)
+    const card = createCharacterCard(character)
     renderElement(card);
   });
   return data;
