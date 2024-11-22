@@ -54,14 +54,13 @@ async function fetchCharacterData() {
     if (!response.ok) {
       throw new Error("Failed to fetch character data");
     }
-
     const data = await response.json();
-
     data.results.forEach((character) => {
       const card = createCharacterCard(character);
       renderElement(card);
     });
     pagination.textContent = `${page} / ${maxPage}`;
+    maxPage = data.info.pages;
   } catch (error) {
     console.error("Error fetching character data:", error);
   }
