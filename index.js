@@ -1,9 +1,9 @@
 import { createCharacterCard } from "./components/CharacterCard/CharacterCard.js";
-import { renderElement } from "./utils/utils.js";
 import { navPagination } from "./components/NavPagination/NavPagination.js";
 import { navButton } from "./components/NavButton/NavButton.js";
 import { search } from "./components/SearchBar/SearchBar.js";
 
+const cardContainer = document.querySelector('[data-js="card-container"]');
 const searchBarContainer = document.querySelector(
   '[data-js="search-bar-container"]'
 );
@@ -34,8 +34,10 @@ const pagination = navPagination();
 
 const searchBar = search((event) => {
   event.preventDefault();
+  console.log("Submit event fired!");
   const queryInput = event.target.elements.query;
-  searchQuery = queryInput.value.trim();
+  searchQuery = queryInput.value.trim(); // Avoid unnecessary spaces
+  console.log("Search Query:", searchQuery);
   page = 1;
   fetchCharacterData();
 });
@@ -46,22 +48,43 @@ navigation.append(prevButton,pagination,nextButton);
 fetchCharacterData();
 
 async function fetchCharacterData() {
+  console.log("Fetching character data...");
+  
+  const cardContainer = document.querySelector('[data-js="card-container"]');
+  cardContainer.innerHTML = ""; // Clear previous results to avoid duplicates
+  
   try {
     const response = await fetch(
       `https://rickandmortyapi.com/api/character/?page=${page}&name=${searchQuery}`
     );
+    console.log("API Response Status:", response.status);
 
     if (!response.ok) {
       throw new Error("Failed to fetch character data");
     }
+
     const data = await response.json();
-    data.results.forEach((character) => {
-      const card = createCharacterCard(character);
-      renderElement(card);
-    });
+    console.log("API Response Data:", data);
+
+    // Handle no results
+    if (!data.results || data.results.length === 0) {
+      console.log("No results found for query:", searchQuery);
+      cardContainer.innerHTML = "<p>No characters found.</p>"; // Show a message for no results
+      return;
+    }
+
+    // Update pagination details
+    maxPage = data.info.pages; // Update max pages based on the API response
     pagination.textContent = `${page} / ${maxPage}`;
-    maxPage = data.info.pages;
+
+    // Render character cards
+    data.results.forEach((character) => {
+      console.log("Rendering character:", character.name);
+      const card = createCharacterCard(character); // Create card for each character
+      cardContainer.append(card); // Append card to container
+    });
   } catch (error) {
     console.error("Error fetching character data:", error);
+    cardContainer.innerHTML = "<p>Failed to load data. Please try again later.</p>";
   }
 }
