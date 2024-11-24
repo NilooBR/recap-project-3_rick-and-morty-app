@@ -1,23 +1,32 @@
 .search-bar-container {
-  width: 300px;
+  width: 100%; /* Makes it responsive to parent container width */
+  max-width: 300px; /* Keeps it limited to 300px width */
+  margin: 0 auto; /* Centers the container */
 }
 
 .search-bar {
   padding: 10px 20px;
-  background-color: var(--color-secondary);
+  background: var(--color-secondary);
   display: grid;
-  grid-template-columns: 1fr 24px;
+  grid-template-columns: 1fr auto; /* Adjust columns to fit input and button tightly */
+  align-items: center; /* Aligns items vertically */
+  border-radius: 5px; /* Optional: Adds rounded corners */
 }
 
 .search-bar__input {
-  background-color: transparent;
+  background: transparent;
   border: none;
   color: var(--color-primary);
+  font-size: 16px; /* Sets input font size for better readability */
 }
 
 .search-bar__button {
   border: none;
-  background-color: transparent;
+  background: transparent;
+  display: flex; /* Flex ensures proper icon alignment */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer; /* Adds a pointer cursor for better UX */
 }
 
 .search-bar__input:focus {
@@ -26,4 +35,43 @@
 
 .search-bar__icon {
   width: 20px;
+  height: 20px; /* Optional: Ensures consistent icon size */
+}.search-bar-container {
+  width: 100%; /* Makes it responsive to parent container width */
+  max-width: 300px; /* Keeps it limited to 300px width */
+  margin: 0 auto; /* Centers the container */
+}
+
+.search-bar {
+  padding: 10px 20px;
+  background: var(--color-secondary);
+  display: grid;
+  grid-template-columns: 1fr auto; /* Adjust columns to fit input and button tightly */
+  align-items: center; /* Aligns items vertically */
+  border-radius: 5px; /* Optional: Adds rounded corners */
+}
+
+.search-bar__input {
+  background: transparent;
+  border: none;
+  color: var(--color-primary);
+  font-size: 16px; /* Sets input font size for better readability */
+}
+
+.search-bar__button {
+  border: none;
+  background: transparent;
+  display: flex; /* Flex ensures proper icon alignment */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer; /* Adds a pointer cursor for better UX */
+}
+
+.search-bar__input:focus {
+  outline: none;
+}
+
+.search-bar__icon {
+  width: 20px;
+  height: 20px; /* Optional: Ensures consistent icon size */
 }

@@ -3,10 +3,7 @@ import { navPagination } from "./components/NavPagination/NavPagination.js";
 import { navButton } from "./components/NavButton/NavButton.js";
 import { search } from "./components/SearchBar/SearchBar.js";
 
-const cardContainer = document.querySelector('[data-js="card-container"]');
-const searchBarContainer = document.querySelector(
-  '[data-js="search-bar-container"]'
-);
+const searchBarContainer = document.querySelector('[data-js="search-bar-container"]');
 const navigation = document.querySelector('[data-js="navigation"]');
 
 // States
