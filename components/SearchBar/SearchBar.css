@@ -1,32 +1,32 @@
 .search-bar-container {
-  width: 100%; /* Makes it responsive to parent container width */
-  max-width: 300px; /* Keeps it limited to 300px width */
-  margin: 0 auto; /* Centers the container */
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
 }
 
 .search-bar {
   padding: 10px 20px;
   background: var(--color-secondary);
   display: grid;
-  grid-template-columns: 1fr auto; /* Adjust columns to fit input and button tightly */
-  align-items: center; /* Aligns items vertically */
-  border-radius: 5px; /* Optional: Adds rounded corners */
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  border-radius: 5px;
 }
 
 .search-bar__input {
   background: transparent;
   border: none;
   color: var(--color-primary);
-  font-size: 16px; /* Sets input font size for better readability */
+  font-size: 16px;
 }
 
 .search-bar__button {
   border: none;
   background: transparent;
-  display: flex; /* Flex ensures proper icon alignment */
+  display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer; /* Adds a pointer cursor for better UX */
+  cursor: pointer;
 }
 
 .search-bar__input:focus {
@@ -35,36 +35,36 @@
 
 .search-bar__icon {
   width: 20px;
-  height: 20px; /* Optional: Ensures consistent icon size */
+  height: 20px;
 }.search-bar-container {
-  width: 100%; /* Makes it responsive to parent container width */
-  max-width: 300px; /* Keeps it limited to 300px width */
-  margin: 0 auto; /* Centers the container */
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
 }
 
 .search-bar {
   padding: 10px 20px;
   background: var(--color-secondary);
   display: grid;
-  grid-template-columns: 1fr auto; /* Adjust columns to fit input and button tightly */
-  align-items: center; /* Aligns items vertically */
-  border-radius: 5px; /* Optional: Adds rounded corners */
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  border-radius: 5px;
 }
 
 .search-bar__input {
   background: transparent;
   border: none;
   color: var(--color-primary);
-  font-size: 16px; /* Sets input font size for better readability */
+  font-size: 16px;
 }
 
 .search-bar__button {
   border: none;
   background: transparent;
-  display: flex; /* Flex ensures proper icon alignment */
+  display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer; /* Adds a pointer cursor for better UX */
+  cursor: pointer;
 }
 
 .search-bar__input:focus {
@@ -73,5 +73,5 @@
 
 .search-bar__icon {
   width: 20px;
-  height: 20px; /* Optional: Ensures consistent icon size */
+  height: 20px;
 }
