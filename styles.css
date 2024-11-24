@@ -12,17 +12,16 @@
 :root {
   --color-primary: rgb(51, 51, 51);
   --color-secondary: #f6f6f6;
-  --font-family: system-ui;
+  --font-family: 'Get Schwifty';
   --color-green: #97ce4c;
 }
 
 body {
   font-family: var(--font-family);
-  color: var(--color-primary);
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
-  background-color: #f0f0f0;
+  background: #f0e14a;
 }
 
 main {
@@ -35,7 +34,13 @@ main {
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
-  background-color: var(--color-primary);
+  background: var(--color-primary);
   color: white;
   border-bottom: 2px solid var(--color-secondary);
+}
+
+@font-face {
+  font-family: "Get Schwifty";
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/3089507/get-schwifty.woff")
+    format("woff");
 }

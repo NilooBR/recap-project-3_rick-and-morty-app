@@ -1,7 +1,13 @@
 .button {
+  padding: 5px 10px;
+  background: #f1f1f1;
   border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: var(--font-family);
 }
 
 .button:hover {
-  background-color: var(--color-secondary);
+  background: #e0e0e0
 }

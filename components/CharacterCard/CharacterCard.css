@@ -7,7 +7,7 @@
 }
 
 .card {
-  background-color: #97ce4c;
+  background: #97ce4c;
   border: 2px solid black;
   border-radius: 12px;
 }
@@ -27,7 +27,7 @@
   padding: 15px 20px;
   display: grid;
   gap: 10px;
-  background-color: var(--color-green);
+  background: var(--color-green);
   border-radius: 12px;
 }
 

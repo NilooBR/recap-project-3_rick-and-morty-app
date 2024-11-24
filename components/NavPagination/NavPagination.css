@@ -1,10 +1,18 @@
 .navigation {
-  height: 30px;
-  display: grid;
-  grid-template-columns: 100px 100px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 10px;
+  background: var(--color-secondary);
+  border-radius: 8px;
 }
 
 .navigation__pagination {
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
 }
